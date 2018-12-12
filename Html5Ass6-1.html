@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #mycan{
+        border: 1px solid rgba(46,62,45,0.95);
+        border-radius: 15px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#mycan").on('click', function(event){
+          var canv=event.target.getContext("2d");
+          canv.clearRect(0, 0, this.width, this.height);
+          canv.fillRect(event.clientX,event.clientY,15,15);
+          canv.stroke();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <canvas id="mycan" width="600" height="600"></canvas>
+  </body>
+</html>
